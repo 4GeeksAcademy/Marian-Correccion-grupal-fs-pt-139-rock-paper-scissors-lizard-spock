@@ -21,15 +21,18 @@ const jugar = (userChoice) => {
 
 
     if (userChoice === computerChoice) {
-        mensajeHTML += "¡I'ts a tie! 🤝";
+      /*return*/ mensajeHTML += "¡I'ts a tie! 🤝";
     }
-     else if (rules[userChoice].includes(computerChoice)) {
-        mensajeHTML += "¡You win! 🎉";
+    if (rules[userChoice].includes(computerChoice)) {
+      /*return*/ mensajeHTML += "¡You win! 🎉";
     } 
-    else {
-        mensajeHTML += "Lusser, tray again 😉";
+    if(rules[computerChoice].includes(userChoice)){
+      /*return*/ mensajeHTML += "Lusser, tray again 😉";
     }
 
   
+  
     document.getElementById("result").innerHTML = mensajeHTML;
-}
+}; 
+
+//console.log(jugar("rock"));
